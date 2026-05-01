@@ -1383,7 +1383,7 @@ pre code {
 }
 @media (max-width: 991px) {
   .sidebar {
-    left: -320px;
+    left: -300px;
   }
   .sidebar-active .sidebar {
     left: 0;
@@ -1398,7 +1398,7 @@ pre code {
     top: 0;
     transition: 0.2s ease-out;
     transition-property: left, right;
-    width: 320px;
+    width: 300px;
     z-index: 20;
   }
   .sidebar a {
@@ -1420,7 +1420,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #ffd9ff;
+    background: #54a60f;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -1454,7 +1454,7 @@ pre code {
 }
 .sidebar-inner {
   color: #999;
-  padding: 18px 10px;
+  padding: 20px 10px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -2620,19 +2620,6 @@ ul.breadcrumb li:last-child {
     color: #eee;
   }
 }
-.gt-header a,
-.gt-comments a,
-.gt-popup a {
-  border-bottom: 0;
-}
-.gt-container .gt-popup .gt-action.is--active::before {
-  top: 0.7em;
-}
-@media (prefers-color-scheme: dark) {
-  .gt-container .gt-header-textarea {
-    background-color: var(--card-bg-color) !important;
-  }
-}
 mark.search-keyword {
   background: transparent;
   border-bottom: 1px dashed #ff2a2a;
@@ -2687,7 +2674,7 @@ header.header {
 .main-inner {
   border-radius: initial;
   box-sizing: border-box;
-  width: calc(100% - 252px);
+  width: calc(100% - 260px);
 }
 @media (max-width: 991px) {
   .main-inner {
@@ -2696,7 +2683,7 @@ header.header {
   }
 }
 .footer-inner {
-  padding-left: 252px;
+  padding-left: 260px;
 }
 @media (max-width: 991px) {
   .footer-inner {
@@ -2802,7 +2789,7 @@ header.header {
 @media (min-width: 992px) {
   .sidebar {
     position: sticky;
-    top: 12px;
+    top: 20px;
   }
   .sidebar-toggle {
     display: none;
@@ -2813,8 +2800,8 @@ header.header {
     box-shadow: initial;
     box-sizing: border-box;
     color: var(--text-color);
-    margin-top: 12px;
-    max-height: calc(100vh - 24px);
+    margin-top: 20px;
+    max-height: calc(100vh - 40px);
     visibility: hidden;
   }
   .site-state-item {
