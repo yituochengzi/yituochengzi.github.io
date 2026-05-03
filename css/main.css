@@ -1252,7 +1252,7 @@ pre code {
   visibility: hidden;
 }
 .sidebar {
-  right: -220px;
+  right: -320px;
 }
 .sidebar-active .sidebar {
   right: 0;
@@ -1267,7 +1267,7 @@ pre code {
   top: 0;
   transition: 0.2s ease-out;
   transition-property: left, right;
-  width: 220px;
+  width: 320px;
   z-index: 20;
 }
 .sidebar a {
@@ -1289,7 +1289,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #04ff6f;
+  background: #1a3ead;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2772,12 +2772,13 @@ header.header {
     display: none;
   }
   .sidebar-active {
-    padding-right: 220px;
+    padding-right: 320px;
   }
   .sidebar-active .footer-fixed {
-    right: 220px;
+    right: 320px;
   }
 }
+背景图片【还原你原来能用的】,
 body::before {
   background-image: url("/images/background.png");
   background-repeat: no-repeat;
@@ -2825,90 +2826,13 @@ body::before {
   opacity: 1;
   color: #f5efe0 !important;
 }
-.index .post-title a,
-.index .post-excerpt,
-.index .post-meta {
-  color: #f5efe0 !important;
-}
-.post-body p,
-.post-body span,
-.post-body div,
-.post-body h1,
-.post-body h2,
-.post-body h3,
-.post-body h4,
-.post-body h5 {
-  text-align: justify !important;
-}
-/* ���¶�����Ϣ��ɫ */
-.post-meta,
-.post-meta > span,
-.post-meta .post-meta-item,
-.post-meta .post-meta-item-icon,
-.post-meta .post-meta-item-text,
-.post-meta time,
-.post-meta a {
-  color: #c9bca4 !important;
-  opacity: 1 !important;
-}
-/* վ����Ϣ���� */
+/* 站点信息（头像+名称+描述+近期文章）整体下移 */
 .site-author {
-  margin-top: 50px !important;
+  margin-top: 80px !important;
 }
-/* ֻ������ҳ����/��Ϣ */
-.index .post-title,
-.index .post-meta {
-  display: none !important;
-}
-/* ��ҳ�������� */
+/* ====================================== */
+/* 永久锁定首页：只显示介绍，不显示任何文章 */
+/* ====================================== */
 .index .post-block {
-  display: none !important;
-}
-/* ��ҳ�������� */
-.index .main-inner:before {
-  content: "�˷����˻���ʱ��ֱ���Ʒ��ò׺���";
-  display: block;
-  text-align: center;
-  font-size: 16px;
-  line-height: 1.8;
-  margin: 60px 0;
-  white-space: pre-wrap;
-  color: #f5efe0 !important;
-}
-/* ========== ����������ҳ ר������ ========== */
-/* ����ҳ�����屳�� */
-.post-page {
-  background: #fffbeb !important;
-}
-/* �������ݿ飺ȡ��͸�� + ��ʾ���Ʊ��� */
-.post-page .post-block {
-  background: #fffbeb !important;
-  opacity: 1 !important; /* �ؼ���ȡ��͸������ */
-  background-color: #fffbeb !important;
-}
-/* �������ݿ�����խ */
-.post-page .main-inner {
-  max-width: 720px !important;
-}
-/* �������ģ��ڻ�ɫ */
-.post-page .post-content {
-  color: #33363b !important;
-  font-size: 15px;
-  line-height: 1.9;
-  opacity: 1 !important; /* �ؼ���ȡ��͸������ */
-}
-/* ���±��� */
-.post-page .post-title {
-  color: #222 !important;
-  opacity: 1 !important;
-}
-/* ����ʱ��/���� */
-.post-page .post-meta {
-  color: #666 !important;
-  opacity: 1 !important;
-}
-/* ��������� */
-.post-page pre,
-.post-page code {
-  background: #fff8e8 !important;
+  display: none !important; /* 隐藏所有文章 */
 }
