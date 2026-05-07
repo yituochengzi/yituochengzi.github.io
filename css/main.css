@@ -1289,7 +1289,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #78f249;
+  background: #ffff1a;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2830,9 +2830,34 @@ body::before {
 .site-author {
   margin-top: 80px !important;
 }
-/* ====================================== */
-/* 永久锁定首页：只显示介绍，不显示任何文章 */
-/* ====================================== */
-.index .post-block {
-  display: none !important; /* 隐藏所有文章 */
+/* 首页隐藏内容 */
+.index .post-block,
+.index .post-title,
+.index .post-meta {
+  display: none !important;
+}
+/* ===================================== */
+/* 【纯CSS 无报错】归档/分类/标签 样式 */
+/* 文字：柔和米黄偏白 | 边框：白色细边框 */
+/* ===================================== */
+/* 统一文字颜色 */
+.archive .post-title,
+.archive .archive-year,
+.archive .post-meta,
+.category .category-list-item,
+.category .category-name,
+.tag .collection-header,
+.tag-cloud-tags a {
+  color: #f8f6f0 !important;
+}
+/* 白色边框（框住文字，极简美观） */
+.archive .post-title,
+.category .category-list-item,
+.tag-cloud-tags a {
+  border: 1px solid #fff !important;
+  border-radius: 6px !important;
+  padding: 6px 12px !important;
+  margin: 6px !important;
+  background: transparent !important;
+  display: inline-block !important;
 }

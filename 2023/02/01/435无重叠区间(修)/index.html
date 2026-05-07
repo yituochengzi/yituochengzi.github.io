@@ -22,24 +22,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yituochengzi.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.27.0","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":330,"display":"always","padding":20,"offset":30},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"language":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":false,"nav":null,"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="长风破浪会有时，直挂云帆济沧海">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Orange Blog">
-<meta property="og:url" content="https://yituochengzi.github.io/index.html">
+    <meta name="description" content="无重叠区间   难度：中等  题目描述给定一个区间的集合 intervals ，其中 intervals[i] &#x3D; [starti, endi] 。返回 需要移除区间的最小数量，使剩余区间互不重叠。 示例 1 输入：intervals &#x3D; [[1,2],[2,3],[3,4],[1,3]]输出：1解释：移除 [1,3] 后，剩下的区间没有重叠。  题解思路 先把区间按照结尾大小进行增序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="435无重叠区间">
+<meta property="og:url" content="https://yituochengzi.github.io/2023/02/01/435%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4(%E4%BF%AE)/index.html">
 <meta property="og:site_name" content="Orange Blog">
-<meta property="og:description" content="长风破浪会有时，直挂云帆济沧海">
+<meta property="og:description" content="无重叠区间   难度：中等  题目描述给定一个区间的集合 intervals ，其中 intervals[i] &#x3D; [starti, endi] 。返回 需要移除区间的最小数量，使剩余区间互不重叠。 示例 1 输入：intervals &#x3D; [[1,2],[2,3],[3,4],[1,3]]输出：1解释：移除 [1,3] 后，剩下的区间没有重叠。  题解思路 先把区间按照结尾大小进行增序">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-31T16:42:11.000Z">
+<meta property="article:modified_time" content="2026-05-04T17:21:51.333Z">
 <meta property="article:author" content="Xu Jinju">
+<meta property="article:tag" content="力扣，贪心，区间">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://yituochengzi.github.io/">
+<link rel="canonical" href="https://yituochengzi.github.io/2023/02/01/435%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4(%E4%BF%AE)/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yituochengzi.github.io/2023/02/01/435%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4(%E4%BF%AE)/","path":"2023/02/01/435无重叠区间(修)/","title":"435无重叠区间"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Orange Blog</title>
+<title>435无重叠区间 | Orange Blog</title>
   
 
 
@@ -99,7 +102,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Orange Blog</h1>
+      <p class="site-title">Orange Blog</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -152,7 +155,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -165,6 +168,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B-1"><span class="nav-number">1.1.</span> <span class="nav-text">示例 1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">题解思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">思考问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%89%E6%80%9D%E8%B7%AF%E5%86%99%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">按思路写的代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%E4%B8%80%E8%A7%88"><span class="nav-number">4.</span> <span class="nav-text">测试结果一览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80%E8%A7%88"><span class="nav-number">5.</span> <span class="nav-text">问题一览</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BE%B9%E7%95%8C%E9%97%AE%E9%A2%98"><span class="nav-number">5.1.</span> <span class="nav-text">1. 边界问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%81%8D%E5%8E%86%E4%B8%AD%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="nav-number">5.2.</span> <span class="nav-text">2. 遍历中删除元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%90%8E%E7%9A%84%E4%BB%A3%E7%A0%81%EF%BC%88%E6%9C%AA%E9%80%9A%E8%BF%87%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">修改后的代码（未通过）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%86%8D%E8%A7%88"><span class="nav-number">7.</span> <span class="nav-text">问题再览</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%B4%A2%E5%BC%95%E9%97%AE%E9%A2%98"><span class="nav-number">7.1.</span> <span class="nav-text">1. 索引问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9D%A1%E4%BB%B6%E9%94%99%E4%B9%B1"><span class="nav-number">7.2.</span> <span class="nav-text">2. 条件错乱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BD%95%E6%97%B6%E6%94%B9%E5%8F%98-end"><span class="nav-number">7.3.</span> <span class="nav-text">3. 何时改变 end</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E7%BB%88%E6%AD%A3%E7%A1%AE%E8%A7%A3%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">最终正确解法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E7%AD%94%E6%A1%88%EF%BC%88%E8%AE%A1%E6%95%B0%E7%A7%BB%E9%99%A4%E5%8C%BA%E9%97%B4%E6%95%B0%EF%BC%89"><span class="nav-number">8.1.</span> <span class="nav-text">标准答案（计数移除区间数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E7%BB%95%E5%BC%AF%E5%AD%90%E8%A7%A3%E6%B3%95%EF%BC%88%E8%AE%A1%E6%95%B0%E4%BF%9D%E7%95%99%E5%8C%BA%E9%97%B4%E6%95%B0%EF%BC%89"><span class="nav-number">8.2.</span> <span class="nav-text">我的绕弯子解法（计数保留区间数）</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -230,268 +234,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+<div style="background:#fff !important; width:100% !important; margin:0 !important; padding: 0px 90px !important; box-sizing: border-box !important;">
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yituochengzi.github.io/2026/04/30/%E9%A6%96%E9%A1%B5%E4%BB%8B%E7%BB%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xu Jinju">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Orange Blog">
-      <meta itemprop="description" content="长风破浪会有时，直挂云帆济沧海">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Orange Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2026/04/30/%E9%A6%96%E9%A1%B5%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">首页</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2026-04-30 21:04:17" itemprop="dateCreated datePublished" datetime="2026-04-30T21:04:17+08:00">2026-04-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-05-02 23:57:28" itemprop="dateModified" datetime="2026-05-02T23:57:28+08:00">2026-05-02</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2026/04/30/%E9%A6%96%E9%A1%B5%E4%BB%8B%E7%BB%8D/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2026/04/30/%E9%A6%96%E9%A1%B5%E4%BB%8B%E7%BB%8D/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-                                                                                                                                             
-    <div class="post-body" itemprop="articleBody">
-          <p>我是一枚普通学习者</p>
-<p>分享学习笔记 | 日常碎碎念 | 技术积累</p>
-<p>持续进步，保持热爱</p>
-<p>这里是 Orange Blog，专注记录技术、生活与思考</p>
-<div style="
-  text-align: center;
-  font-size: 16px;
-  line-height: 1.8;
-  margin-top: 60px;
-">
-<br>
-<br>
-</div>
-
-
-      
-    </div>
-
-    
-    
-    
-    
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yituochengzi.github.io/2023/02/01/135%E6%8C%89%E8%AF%84%E5%88%86%E5%88%86%E9%85%8D%E7%B3%96%E6%9E%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xu Jinju">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Orange Blog">
-      <meta itemprop="description" content="长风破浪会有时，直挂云帆济沧海">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Orange Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/02/01/135%E6%8C%89%E8%AF%84%E5%88%86%E5%88%86%E9%85%8D%E7%B3%96%E6%9E%9C/" class="post-title-link" itemprop="url">135按评分分糖果</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-02-01 00:42:11" itemprop="dateCreated datePublished" datetime="2023-02-01T00:42:11+08:00">2023-02-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-05-05 01:15:39" itemprop="dateModified" datetime="2026-05-05T01:15:39+08:00">2026-05-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2023/02/01/135%E6%8C%89%E8%AF%84%E5%88%86%E5%88%86%E9%85%8D%E7%B3%96%E6%9E%9C/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2023/02/01/135%E6%8C%89%E8%AF%84%E5%88%86%E5%88%86%E9%85%8D%E7%B3%96%E6%9E%9C/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-                                                                                                                                             
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>一群孩子站成一排，每个孩子有自己的评分。现在需要给这些孩子发糖果，规则是如果一个孩子的评分比自己身旁的一个孩子要高，那么这个孩子就必须得到比身旁孩子更多的糖果；所有孩子至少要有一个糖果。求解最少需要多少个糖果<br>输入：孩子评分[1,2,1,2,1,2,1,3,4]<br>输出：所需最少糖果数</p>
-<h4 id="我的题解"><a href="#我的题解" class="headerlink" title="我的题解"></a>我的题解</h4><ul>
-<li>先排序</li>
-<li>数字类别有几类</li>
-<li>最小的分一颗糖，按类别依次递增</li>
-<li>把糖果加起来</li>
-</ul>
-<p>题目理解错误：顺序固定，不能排序，只要求，比隔壁评分高，糖果数就比他多1，不是评分相同就拿一样糖果<br>纠正后的题解：</p>
-<ul>
-<li>定边界，数组小于2时(1,0)，返回len</li>
-<li>初始化每个人只有一颗糖果</li>
-<li>从左到右遍历，左大于右，左 + 1</li>
-<li>从右到左遍历，右大于左，右 + 1</li>
-<li>计算总和</li>
-</ul>
-<p>我根据解法写的代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">countCandiesByRank</span>(<span class="params">rank:<span class="built_in">list</span>[<span class="built_in">int</span>]</span>)-&gt;<span class="built_in">int</span>:</span><br><span class="line">    size = <span class="built_in">len</span>(rank)</span><br><span class="line">    <span class="keyword">if</span> size&lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> size</span><br><span class="line">    candy_init = [<span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(size)]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(size):</span><br><span class="line">        <span class="keyword">if</span> rank[i] &gt; rank[i + <span class="number">1</span>]:</span><br><span class="line">            candy_init[i] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> rank[i] &gt; rank[i - <span class="number">1</span>]:</span><br><span class="line">            candy_init[i] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>(candy_init)</span><br><span class="line"></span><br><span class="line">countCandiesByRank([<span class="number">20</span>,<span class="number">1</span>,<span class="number">30</span>,<span class="number">40</span>])</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>❌ 错误输出</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IndexError: list index out of range</span><br></pre></td></tr></table></figure></blockquote>
-<p>自查发现 存在以下问题<br>1.索引越界<br>2.糖果数不应该是candy[i] +&#x3D; 1</p>
-<h4 id="1-索引越界问题"><a href="#1-索引越界问题" class="headerlink" title="1.索引越界问题"></a>1.索引越界问题</h4><p>解决办法：分两次遍历<br>第一次，从左往右遍历，（1，size）<br>比较candy[i] &gt; candy[i - 1]，提前从1开始，i &#x3D; 1时，i - 1为0，不会越界了</p>
-<p>同理，<br>第二次，从右往左遍历，（size - 2, -1, -1）<br>因为最右边的数下标为size - 1,必须从倒数第二个开始，不然i + 1就超索引了</p>
-<h4 id="2-糖果加法"><a href="#2-糖果加法" class="headerlink" title="2.糖果加法"></a>2.糖果加法</h4><p>解决办法：<br>左大于右，左糖果数 &#x3D; 右糖果数 + 1<br>右大于左，右糖果数 &#x3D; 左糖果数 + 1</p>
-<p>代码为</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">countCandiesByRank</span>(<span class="params">rank:<span class="built_in">list</span>[<span class="built_in">int</span>]</span>)-&gt;<span class="built_in">int</span>:</span><br><span class="line">    size = <span class="built_in">len</span>(rank)</span><br><span class="line">    <span class="keyword">if</span> size&lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> size</span><br><span class="line">    candy_count = [<span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(size)]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,size):</span><br><span class="line">        <span class="keyword">if</span> rank[i] &gt; rank[i - <span class="number">1</span>]:</span><br><span class="line">            candy_count[i] = candy_count[i - <span class="number">1</span>] + <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(size - <span class="number">2</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> rank[i] &gt; rank[i + <span class="number">1</span>]:</span><br><span class="line">            candy_count[i] = candy_count[i + <span class="number">1</span>] + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>(candy_count)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>❌ 错误输出</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IndexError: list index out of range</span><br></pre></td></tr></table></figure></blockquote>
-<p>太粗心，第二次循环变量没改过来</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">countCandiesByRank</span>(<span class="params">rank:<span class="built_in">list</span>[<span class="built_in">int</span>]</span>)-&gt;<span class="built_in">int</span>:</span><br><span class="line">    size = <span class="built_in">len</span>(rank)</span><br><span class="line">    <span class="keyword">if</span> size&lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> size</span><br><span class="line">    candy_count = [<span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(size)]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,size):</span><br><span class="line">        <span class="keyword">if</span> rank[i] &gt; rank[i - <span class="number">1</span>]:</span><br><span class="line">            candy_count[i] = candy_count[i - <span class="number">1</span>] + <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(size - <span class="number">2</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> rank[j] &gt; rank[j + <span class="number">1</span>]:</span><br><span class="line">            candy_count[j] = candy_count[j + <span class="number">1</span>] + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>(candy_count)</span><br></pre></td></tr></table></figure>
-
-<p>测试<br>countCandiesByRank([20,1,30,40])<br>结果为8，正确为8<br>countCandiesByRank([2,1,3,4,1,1,2,1])<br>结果为12，正确为13</p>
-<p>countCandiesByRank([2,1,3,4,1,1,2,1])<br>手动跑了一遍代码发现，当从左到右遍历完成时<br>candy为[1,1,2,3,1,1,2,1]<br>从右往左遍历时，rank[3] &#x3D;&#x3D; 4 &gt; rank[3+1] &#x3D;&#x3D;1，这一处，原candy[3] &#x3D;&#x3D; 3已经大于candy[4] &#x3D;&#x3D; 1，再令candy[3] &#x3D; candy[4] +1 &#x3D; 1 + 1 &#x3D; 2，会破坏第一层遍历的结果</p>
-<p>故将</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 右→左：只比右边</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(size - <span class="number">2</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> rank[j] &gt; rank[j + <span class="number">1</span>]:</span><br><span class="line">            candy_count[j] = candy_count[j + <span class="number">1</span>] + <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>改为</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 右→左：只比右边</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(size - <span class="number">2</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">       <span class="keyword">if</span> rank[i] &gt; rank[i + <span class="number">1</span>]:</span><br><span class="line">           candy[i] = <span class="built_in">max</span>(candy[i], candy[i + <span class="number">1</span>] + <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="正确题解"><a href="#正确题解" class="headerlink" title="正确题解"></a>正确题解</h4><ul>
-<li>定边界，数组小于2时(1,0)，返回len</li>
-<li>初始化每个人只有一颗糖果</li>
-<li>从左到右遍历，左大于右，左 &#x3D; 右 + 1</li>
-<li>从右到左遍历，右大于左，右 &#x3D; max(左，右)</li>
-<li>计算总和</li>
-</ul>
-<p>最终代码为</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">countCandiesByRank</span>(<span class="params">rank: <span class="built_in">list</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">   size = <span class="built_in">len</span>(rank)</span><br><span class="line">   <span class="keyword">if</span> size &lt; <span class="number">2</span>:</span><br><span class="line">       <span class="keyword">return</span> size</span><br><span class="line">   </span><br><span class="line">   candy = [<span class="number">1</span>] * size</span><br><span class="line">   </span><br><span class="line">   <span class="comment"># 左→右：只比左边</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, size):</span><br><span class="line">       <span class="keyword">if</span> rank[i] &gt; rank[i - <span class="number">1</span>]:</span><br><span class="line">           candy[i] = candy[i - <span class="number">1</span>] + <span class="number">1</span></span><br><span class="line">   </span><br><span class="line">   <span class="comment"># 右→左：只比右边</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(size - <span class="number">2</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">       <span class="keyword">if</span> rank[i] &gt; rank[i + <span class="number">1</span>]:</span><br><span class="line">           candy[i] = <span class="built_in">max</span>(candy[i], candy[i + <span class="number">1</span>] + <span class="number">1</span>)</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">return</span> <span class="built_in">sum</span>(candy)</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-    
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://yituochengzi.github.io/2023/02/01/435%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4(%E4%BF%AE)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -505,13 +258,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Orange Blog">
+      <meta itemprop="name" content="435无重叠区间 | Orange Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/02/01/435%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4(%E4%BF%AE)/" class="post-title-link" itemprop="url">435无重叠区间</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          435无重叠区间
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -541,6 +294,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
   
   <span class="post-meta-item">
     
@@ -563,8 +323,7 @@
     
     
                                                                                                                                              
-    <div class="post-body" itemprop="articleBody">
-          <ol start="435">
+    <div class="post-body" itemprop="articleBody"><ol start="435">
 <li>无重叠区间</li>
 </ol>
 <ul>
@@ -687,7 +446,6 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">eraseOverlapIntervals</span>(<span class="params">intervals: <span class="built_in">list</span>[<span class="built_in">list</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="keyword">if</span> intervals <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(intervals)):</span><br><span class="line">        <span class="keyword">if</span> intervals[i][<span class="number">0</span>] &gt; intervals[i][<span class="number">1</span>]:</span><br><span class="line">            <span class="keyword">raise</span> Exception(<span class="string">&quot;输入区间不合法&quot;</span>)</span><br><span class="line">            </span><br><span class="line">    intervals.sort(key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>])</span><br><span class="line">    count = <span class="number">0</span>  <span class="comment"># 初始化移除0个区间</span></span><br><span class="line">    end = intervals[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(intervals)):</span><br><span class="line">        <span class="keyword">if</span> end &gt; intervals[i][<span class="number">0</span>]:  <span class="comment"># 前区间结束 &gt; 后区间开始，区间重叠</span></span><br><span class="line">            count += <span class="number">1</span>  <span class="comment"># 重叠区间应被移除，不改变end</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            end = intervals[i][<span class="number">1</span>]  <span class="comment"># 区间未重叠，更新end</span></span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> count</span><br></pre></td></tr></table></figure>
 
 <h3 id="我的绕弯子解法（计数保留区间数）"><a href="#我的绕弯子解法（计数保留区间数）" class="headerlink" title="我的绕弯子解法（计数保留区间数）"></a>我的绕弯子解法（计数保留区间数）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">eraseOverlapIntervals</span>(<span class="params">intervals: <span class="built_in">list</span>[<span class="built_in">list</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="keyword">if</span> intervals <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(intervals)):</span><br><span class="line">        <span class="keyword">if</span> intervals[i][<span class="number">0</span>] &gt; intervals[i][<span class="number">1</span>]:</span><br><span class="line">            <span class="keyword">raise</span> Exception(<span class="string">&quot;输入区间不合法&quot;</span>)</span><br><span class="line">            </span><br><span class="line">    intervals.sort(key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>])</span><br><span class="line">    count = <span class="number">1</span>  <span class="comment"># 保留区间数默认为1</span></span><br><span class="line">    end = intervals[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(intervals)):</span><br><span class="line">        <span class="keyword">if</span> intervals[i][<span class="number">0</span>] &gt;= end:  <span class="comment"># 后开始值大于等于前结束值，区间未重叠</span></span><br><span class="line">            count += <span class="number">1</span>  <span class="comment"># 满足条件就保留</span></span><br><span class="line">            end = intervals[i][<span class="number">1</span>]  <span class="comment"># 区间未重叠，更新end</span></span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">len</span>(intervals) - count  <span class="comment"># 计算移除的区间</span></span><br></pre></td></tr></table></figure>
-      
     </div>
 
     
@@ -695,110 +453,48 @@
     
     
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
+          
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yituochengzi.github.io/2023/02/01/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Xu Jinju">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Orange Blog">
-      <meta itemprop="description" content="长风破浪会有时，直挂云帆济沧海">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Orange Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/02/01/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/" class="post-title-link" itemprop="url">测试文档</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-02-01 00:42:11" itemprop="dateCreated datePublished" datetime="2023-02-01T00:42:11+08:00">2023-02-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-05-03 22:25:36" itemprop="dateModified" datetime="2026-05-03T22:25:36+08:00">2026-05-03</time>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2023/02/01/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2023/02/01/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-                                                                                                                                             
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><p><strong>粗体</strong><br><em>斜体</em></p>
+<div class="post-copyright">
 <ul>
-<li>列表</li>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Xu Jinju
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://yituochengzi.github.io/2023/02/01/435%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4(%E4%BF%AE)/" title="435无重叠区间">https://yituochengzi.github.io/2023/02/01/435无重叠区间(修)/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
-<ol>
-<li>有序列表</li>
-</ol>
-<blockquote>
-<p>引用</p>
-</blockquote>
-<p><code>行内代码</code></p>
-<pre><code class="language-javascript">代码块
-</code></pre>
+</div>
 
-      
-    </div>
+          <div class="post-tags">
+              <a href="/tags/%E5%8A%9B%E6%89%A3%EF%BC%8C%E8%B4%AA%E5%BF%83%EF%BC%8C%E5%8C%BA%E9%97%B4/" rel="tag"><i class="fa fa-tag"></i> 力扣，贪心，区间</a>
+          </div>
 
-    
-    
-    
-    
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+        
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_wechat"></a>
+      <a class="a2a_button_weibo"></a>
+      <a class="a2a_button_qq"></a>
+      <a class="a2a_button_copy"></a>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/02/01/%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/" rel="prev" title="测试文档">
+                  <i class="fa fa-angle-left"></i> 测试文档
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/02/01/135%E6%8C%89%E8%AF%84%E5%88%86%E5%88%86%E9%85%8D%E7%B3%96%E6%9E%9C/" rel="next" title="135按评分分糖果">
+                  135按评分分糖果 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -806,7 +502,9 @@
 
 
 
+</div>
 
+    <div class="comments" id="waline"></div>
 </div>
   </main>
 
@@ -858,7 +556,7 @@
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://mywaline-ochre.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"avatar":"robohash","dark":"auto","meta":["nick","mail","link"],"requiredMeta":["nick"],"wordLimit":0,"pageSize":10,"emoji":true,"el":"#waline","comment":true,"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","path":"/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://mywaline-ochre.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"avatar":"robohash","dark":"auto","meta":["nick","mail","link"],"requiredMeta":["nick"],"wordLimit":0,"pageSize":10,"emoji":true,"el":"#waline","comment":true,"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","path":"/2023/02/01/435%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4(%E4%BF%AE)/"}</script>
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
 document.addEventListener('page:loaded', () => {
